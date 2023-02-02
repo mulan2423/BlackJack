@@ -79,44 +79,29 @@ let remainingDeck = cardsObject.cardList;
 let playerDeck = [];
 let dealerDeck = [];
 
-function handleDealButton(){
-    let cardsObject = pickCard(cardList);
+function handleButton(){
+    let cardsObjectPlayer = pickCard(cardList);
     let cardsObjectDealer = pickCard(cardList);
-    let card = cardsObject.chosenCard;
+    let cardPlayer = cardsObjectPlayer.chosenCard;
     let cardDealer = cardsObjectDealer.chosenCard;
-    let remainingDeck = cardsObject.cardList;
+    let remainingDeck = cardsObjectPlayer.cardList;
     let remainingDeckDealer = cardsObjectDealer.cardList;
     dealerDeck.push(cardDealer);
-    playerDeck.push(card);
+    playerDeck.push(cardPlayer);
     addCardToDeck(cardDealer, 'dealer-hand');
-    addCardToDeck(card, 'player-hand');
+    addCardToDeck(cardPlayer, 'player-hand');
     console.log("in the deal btn")
 }
 
+
+function handleHitButton() {
+    handleButton();
+}
+
 function handleHitButton(){
-    let cardsObject = pickCard(cardList);
-    let cardObject2 = pickCard(cardList)
-    let card = cardsObject.chosenCard;
-    let cardDealer2 = cardObject2.chosenCard
-    let remainingDeck = cardsObject.cardList;
-    let remainingDeck2 = cardObject2.cardList
-    dealerDeck.push(cardDealer2)
-    playerDeck.push(card)
-    addCardToDeck(card, 'player-hand');
-    addCardToDeck(cardDealer2,'dealer-hand');
-    console.log("in the handle hit button")
+    handleButton();
 }
 
 function handleStandButton(){
-    console.log('in the handle stand btn')
-    let cardsObject = pickCard(cardList);
-    let cardsObject3 = pickCard(cardList)
-    let card = cardsObject.chosenCard;
-    let cardDealer3 = cardsObject3.chosenCard
-    let remainingDeck = cardsObject.cardList;
-    let remainingDeck3 = cardsObject3.cardList
-    dealerDeck.push(cardDealer3)
-    playerDeck.push(card)
-    addCardToDeck(card, 'player-hand');
-    addCardToDeck(cardDealer3, 'dealer-hand');
+    handleButton();
 }
