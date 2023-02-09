@@ -94,7 +94,7 @@ function handleButton(){
 }
 
 
-function handleHitButton() {
+function handleDealButton() {
     handleButton();
 }
 
